@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation</title>
+    <link rel="stylesheet" href="css/regiform.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@200&family=Monoton&family=Qwitcher+Grypen&family=Sedgwick+Ave+Display&family=Tektur:wght@400;500&family=Tilt+Prism&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class='bx bxs-graduation'></i>
+                <span>Leading Education</span>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+
+        <div class="user">
+            <img src="img/WhatsApp Image 2023-08-27 at 20.23.18.jpg" alt="" class="user-img">
+        
+            <div>
+                <p class="bold">Thamali Arunika</p>
+                <p>I'm Student</p>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="dash">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-plus'></i>
+                    <span class="nav-item"> Register</span>
+                </a>
+                <span class="dash"> Register</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-food-menu'></i>
+                    <span class="nav-item">View</span>
+                </a>
+                <span class="dash">View </span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="nav-item"> Management</span>
+                </a>
+                <span class="dash"> Management</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-log-out"></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+                <span class="dash">Logout</span>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+<div class="containt">
+    <h1>Well Come</h1>
+    <h2>Achive Your Goal</h2>
+</div>
+    </div>
+    <script>
+        let btn = document.querySelector('#btn')
+        let sidebar=document.querySelector('.sidebar')
+
+        btn.onclick = function(){
+            sidebar.classList.toggle('active');
+        };
+    </script>
+</body>
+</html>
