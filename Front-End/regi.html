@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/styleRegi.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="headinggg">
+            <h1>Student Register Form</h1>
+        </div>
+        <div class="container">
+            <div class="form">
+            
+                <form autocomplete="off">
+                    <div>
+                        <input type="text" id="txtFullName" class="input" placeholder="Enter Your Name" required>
+                        
+                        <input type="text" id="txtAddress" class="input" placeholder="Enter Your Address" class="input" >
+            
+                        <input type="text"  id="txtAge" class="input" placeholder="Age" class="input"><br>
+                    
+                        Gender : <input type="radio" id="radioGender" class="radioGender" name="radioGender" value="male" required> Male
+                         <input type="radio" id="radioGender" class="radioGender" name="radioGender" value="female" required> Female
+            
+                        <input type="text"  placeholder="Mobile" class="input" id="txtMobile">
+            
+                        <input type="text"  placeholder="Batch Name / No" class="input" id="txtBatchName">
+            
+                        <input type="text"  placeholder="NIC" class="input" id="txtNic">
+            
+                        <input type="text"  placeholder="Register Date" class="input" id="txtRgDt">
+                
+                        <!-- <input type="url" class="input" id="url" placeholder="Enter Your Image URL" required> -->
+                    </div>            
+            
+                    <div class="button">
+                        <button type="submit" class="btnRg" id="btnRg">Register</button>
+                        <button type="reset" class="btnRst" id="btnRst">Reset</button>
+                    </div>
+                    <div class="back-home">
+                        <p>Are you going back? <a href="log.html" class="register-link">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="line"></div>
+            <div class="op-box">
+                <div class="output">
+                    <h2>Students Detail</h2>
+                    <div class="cardContainer" id="cardContainer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/regi.js"></script>
+</body>
+
+</html>
