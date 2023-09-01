@@ -16,7 +16,7 @@ public class StudentController {
     public StudentServiceAgreement serviceAgreement;
 
     @GetMapping
-    public List<Student> getStudent(){
+    public List<StudentEntity> getStudent(){
         return serviceAgreement.getStudent();
     }
     @GetMapping("/{fullName}")
@@ -27,4 +27,10 @@ public class StudentController {
     public void saveStudent(@RequestBody Student student){
         serviceAgreement.saveStudent(student);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteStudentById(@PathVariable Long id){
+        serviceAgreement.deleteStudentById(id);
+    }
+
 }

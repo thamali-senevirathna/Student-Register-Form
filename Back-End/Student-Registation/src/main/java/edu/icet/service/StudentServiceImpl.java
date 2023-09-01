@@ -24,15 +24,20 @@ public class StudentServiceImpl implements StudentServiceAgreement{
     }
 
     @Override
-    public List<Student> getStudent() {
+    public void deleteStudentById(Long id) {
+        repoStudent.deleteById(id);
+    }
+
+    @Override
+    public List<StudentEntity> getStudent() {
         Iterable<StudentEntity> studentList = repoStudent.findAll();
         Iterator<StudentEntity> iterator = studentList.iterator();
-        List<Student> studentModels = new ArrayList<>();
+        List<StudentEntity> studentModels = new ArrayList<>();
 
         while (iterator.hasNext()){
             StudentEntity  entity = iterator.next();
 
-            studentModels.add(Student.builder()
+            studentModels.add(StudentEntity.builder().id(entity.getId())
                     .fullName(entity.getFullName())
                     .address(entity.getAddress())
                     .age(entity.getAge())

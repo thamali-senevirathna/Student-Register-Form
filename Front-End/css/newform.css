@@ -11,7 +11,7 @@
     color: #242424;
   }
   .container {
-    width: 1300px;
+    width: 900px;
     margin: 0px auto;
     padding-left: 40px;
      position: sticky;
@@ -24,11 +24,12 @@
   .heading {
     font-size: 28px;
     font-weight: 500;
+    height: 35px;
+    align-items: center;
+    color: #ffffff;
     border-bottom: 1px solid #46b7c1;
     margin-bottom: 20px;
-  
-    background: rgb(131,58,180);
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(151,100,214,1) 4%, rgba(29,229,253,1) 49%, rgba(140,186,193,0.9866071428571429) 65%, rgba(239,80,177,1) 86%, rgba(239,80,177,1) 97%, rgba(195,109,180,1) 100%, rgba(252,176,69,1) 100%);
+    background-color: rgb(0, 51, 255);
   }
   /********* Common CSS End **********/
 
@@ -66,14 +67,41 @@ nav {
 	padding:25px 0px;
     position: sticky;
 }
-nav a {
-	color: black;
+/* nav a {
+	
+} */
+
+.navbar a{
+  position: relative;
+  font-size: 16px;
+  margin-right: 30px;
+  text-decoration: none;
+
+  color: black;
 	text-decoration: none;
 	font-size:18px;
 	padding:2px 10px;
 	font-weight:500;
     position: sticky;
 }
+.navbar a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #242424;
+  bottom: -5px;
+  border-radius: 5px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: .5s ease;
+}
+.navbar a:hover:after{
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /********* Design Logo and Menu section CSS End **********/
 
 /********* Slider CSS Starts **********/
@@ -96,8 +124,7 @@ nav a {
     color: #fff;
     background: #46b7c1;
     text-align: center;
-    background: rgb(131,58,180);
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(151,100,214,1) 4%, rgba(29,229,253,1) 49%, rgba(140,186,193,0.9866071428571429) 65%, rgba(239,80,177,1) 86%, rgba(239,80,177,1) 97%, rgba(195,109,180,1) 100%, rgba(252,176,69,1) 100%);
+    background-color: rgb(0, 51, 255);
   }
   .event ul li {
     margin-bottom: 20px;
