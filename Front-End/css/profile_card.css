@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Syncopate);
+
+body{
+    display: flex;
+    background-color: #C0C0C0;
+
+}
+.profile_card{
+    position: relative;
+    border: 1px solid black;
+    height: 20%;
+    width: 100vh;
+    padding: 20px;
+    margin-left: 300px;
+    margin-top: 30px;
+    background: radial-gradient(
+    circle closest-corner at center 125px,#22222242,rgba(0, 0, 0, 0.58) 40%) no-repeat;
+    text-align: center;
+}
+
+img{
+    width: 100px;
+    border-radius: 60px;
+}
+.profile_card h1{
+    font-family: 'Lisu Bosa', serif;
+    font-family: 'Monoton', cursive;
+    font-family: 'Qwitcher Grypen', cursive;
+    font-family: 'Rubik Iso', cursive;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-family: 'Tektur', cursive;
+    font-family: 'Tilt Prism', cursive;
+    text-transform: uppercase;
+    background: radial-gradient(circle farthest-corner at center center,#0b0202a7,#170ce6) no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.profile_card h6{
+    color:rgb(61, 17, 17);
+    
+    font-size: 100%;
+}
+.profile_card a button{
+    width: 100px;
+    height: 30px;
+    border-radius: 2em;
+    transition-duration: 0.4s;
+    color: #f0f0f4;
+    background-color: #CC0066;
+}
+.profile_card a button:hover {
+    background-color: #FF8000;
+    color: white;
+  }
+
+
+
