@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -27,6 +28,29 @@ public class StudentServiceImpl implements StudentServiceAgreement{
     public void deleteStudentById(Long id) {
         repoStudent.deleteById(id);
     }
+
+    @Override
+    public Student searchStudentById(Long id) {
+        Student student = new Student();
+        Optional<StudentEntity> byId = repoStudent.findById(id);
+        Iterator<StudentEntity> iterator = byId.stream().iterator();
+        while (iterator.hasNext()){
+            StudentEntity entity= iterator.next();
+            student.setId(entity.getId());
+            student.setFullName(entity.getFullName());
+            student.setAddress(entity.getAddress());
+            student.setAge(entity.getAge());
+            student.setGender(entity.getGender());
+            student.setMobile(entity.getMobile());
+            student.setBatchName(entity.getBatchName());
+            student.setNic(entity.getNic());
+            student.setRegisterDate(entity.getRegisterDate());
+        }
+        return student;
+    }
+
+
+
 
     @Override
     public List<StudentEntity> getStudent() {

@@ -7,10 +7,14 @@ import java.util.List;
 
 public interface StudentServiceAgreement {
 
+
     List<StudentEntity> getStudent();
      void saveStudent(Student student);
 
     Iterable<StudentEntity> getStudentByFullName(String fullName);
 
     void deleteStudentById(Long id);
+
+    Student searchStudentById(Long id);
+
 }
