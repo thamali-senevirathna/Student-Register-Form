@@ -1,6 +1,6 @@
 const studentProfiles=document.getElementById("profilesStudent");
 let tblBody = ` `;
-fetch("http://localhost:8080/student")
+fetch("http://localhost:8080/std")
 .then(response => response.json())
 .then(res => {
     
@@ -31,7 +31,7 @@ function loadProfile(id){
       redirect: 'follow'
     };
     
-    fetch(`http://localhost:8080/student/findById/${id}`, requestOptions)
+    fetch(`http://localhost:8080/std/findById/${id}`, requestOptions)
       .then(response => response.text())
       .then(result =>{
         console.log(result)
@@ -47,6 +47,8 @@ function loadProfile(id){
           </div>
           <div class="data">
             <h2>${stdObj.fullName}</h2>
+            <h4>${stdObj.email}</h4>
+            <h4>${stdObj.password}</h4>
             <h4>${stdObj.address}</h4>
             <h4>${stdObj.age}</h4>
             <h4>${stdObj.gender}</h4>

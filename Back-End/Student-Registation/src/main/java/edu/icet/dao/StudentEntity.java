@@ -18,6 +18,10 @@ public class StudentEntity {
     private Long id;
     @Column(name="Full Name")
     private String fullName;
+    @Column(name="Email")
+    private String email;
+    @Column(name="Password")
+    private String password;
     @Column(name="Address")
     private String address;
     @Column(name="Age")
@@ -32,4 +36,6 @@ public class StudentEntity {
     private String nic;
     @Column(name="Register Date")
     private String registerDate;
+    private String imgName;
+    private String imgPath;
 }

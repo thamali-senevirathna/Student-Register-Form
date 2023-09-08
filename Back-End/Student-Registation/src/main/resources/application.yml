@@ -1,3 +1,8 @@
 spring :
-  profiles :
-    active : dev
+  datasource:
+    url : jdbc:mysql://localhost:3306/studentregiapp
+    userName : root
+    password : 1234
+  jpa :
+    hibernate :
+      ddl-auto : update

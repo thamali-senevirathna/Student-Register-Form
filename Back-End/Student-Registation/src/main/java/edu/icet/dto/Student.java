@@ -11,8 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Student {
     private Long id;
-
     private String fullName;
+    private String email;
+    private String password;
     private String address;
     private int age;
     private String gender;
@@ -20,5 +21,6 @@ public class Student {
     private String batchName;
     private String nic;
     private String registerDate;
-
+    private String imgName;
+    private String imgPath;
 }

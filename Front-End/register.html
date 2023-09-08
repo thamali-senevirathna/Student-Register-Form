@@ -6,20 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-    <link rel="stylesheet" href="css/styleRegi.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <div class="box">
-        <div class="headinggg">
-            <h1>Student Register Form</h1>
-        </div>
-        <div class="container">
-            <div class="form">
-            
-                <form autocomplete="off">
-                    <div>
+    <img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+		<div class="login-content">
+           
+                <img src="img/avatar.svg" class="avatarImg">
+				<h2 class="title">Welcome</h2>
+                <div>
                         <input type="text" id="txtFullName" class="input" placeholder="Enter Your Name" required>
+
+                        <input type="text" id="txtEmail" class="input" placeholder="Enter Your Email" required>
+
+                        <input type="password" id="txtPassword" class="input" placeholder="Enter Your Password" >
                         
                         <input type="text" id="txtAddress" class="input" placeholder="Enter Your Address" class="input" >
             
@@ -36,30 +44,21 @@
             
                         <input type="text"  placeholder="Register Date" class="input" id="txtRgDt">
                 
-                        <!-- <input type="url" class="input" id="url" placeholder="Enter Your Image URL" required> -->
+                        <input type="file" class="input" id="img">
+                        
                     </div>            
             
                     <div class="button">
-                        <button type="submit" class="btnRg" id="btnRg">Register</button>
-                        <button type="reset" class="btnRst" id="btnRst">Reset</button>
+                        <button class="btnRg" id="btnRg1">Register</button>
+                        <button class="btnRg" id="btnClear">Clear</button>
                     </div>
                     <div class="back-home">
                         <p>Are you going back? <a href="index.html" class="register-link">back</a></p>
                     </div>
-                </form>
-            </div>
-            <div class="line"></div>
-            <div class="op-box">
-                <div class="output">
-                    <h2>Students Detail</h2>
-                    <div class="cardContainer" id="cardContainer">
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <script src="js/regi.js"></script>
+    <script src="js/register.js"></script>
 </body>
 
 </html>

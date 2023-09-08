@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+font-family: 'Be vietnam',sans-serif;
+/* overflow: hidden; */
+}
+html{
+    font-size: 62.5%;
+}
+.container{
+    background-color: #20364b;
+    position: relative;
+}
+.headerd {
+	padding: 4px;
+    position: sticky;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(151,100,214,1) 4%, rgba(29,229,253,1) 49%, rgba(140,186,193,0.9866071428571429) 65%, rgba(239,80,177,1) 86%, rgba(239,80,177,1) 97%, rgba(195,109,180,1) 100%, rgba(252,176,69,1) 100%); 
+    border-radius: 9px;
+}
+.nameCompany{
+    width: 200px;
+    height: 20px;
+    margin: 0px auto;
+    padding-left: 70px;
+    text-align: center;
+    font-weight: light;
+    font-size: 11pt;   position: sticky;
+}
+.navbar-container{
+    width: 100%;
+    position: absolute;
+    height: 10rem;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0% 10% 0% 10%;
+}
+.logo-container{
+   width: 15%;
+ display: flex;
+ justify-content: center;
+align-items: center;
+}
+.navlinks{
+    font-size: 2rem;
+    width: 100%;
+    text-align: right;
+}
+.navlinks a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: aliceblue;
+    padding-right: 40px;
+    font-weight: 600;
+}
+.navlinks a.active,
+.navlinks a:hover{
+    color:rgb(255, 81, 0);
+}
+.search{
+    background: rgb(255, 81, 0);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.search i{
+    font-size: 16px;
+    background-color:rgb(255, 81, 0);
+    padding: 10px;
+    border-radius: 50%;
+    color: #253a49;
+    position: relative;
+}
+.button{
+    margin-top: 8px;
+    background-color: #70683b;
+    padding: 7px;
+    border-radius: 50%;
+}
+.banner{
+    height: 70rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.left, .right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.right{
+    justify-content: flex-start;
+    background-position: center left;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+.left_inner_container{
+    height: 75%;
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+}
+.left_inner_container h2{
+    font-size: 37pt;
+    width: 49rem;
+    line-height: 42pt;
+    color: aliceblue;
+}
+.left_inner_container h2 span{
+    color: rgb(255, 81, 0);
+}
+.left_inner_container h2 span:hover{
+    color: #99e30e;
+}
+
+.mainImg1{
+    width:400px ;
+    margin-bottom: 10%;
+    margin-bottom: 30%;
+}
+.mainImg2{
+margin-bottom: 70%;
+}
+.mainImg3{
+    margin-bottom: 20%;
+}
+.info{
+    font-size: 11pt;
+    width: 40rem;
+    line-height: 14pt;
+    word-spacing: 2px;
+    color: aliceblue;
+}
+.left_inner_container{
+    height: 77%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+}
+.box input,
+.box button{
+    display: block;
+}
+.box{
+    margin-top: 20px;
+}
+.box input{
+    width: 290px;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-bottom: 25px;
+    padding-left:30px ;
+}
+.box input::placeholder{
+    font-weight: light;
+    font-size: 11pt;
+}
+.box .button2{
+    width: 150px;
+    height: 50px;
+    margin-bottom: 30px;
+    border-radius: 56px;
+    outline: none;
+    border: none;
+    background: rgb(255, 81, 0);
+    font-size: 18px;
+    color: #20364b;
+    margin-bottom: 100px;
+    margin-left: 70px;
+}
+.box .button2:hover {
+    background-color: #99e30e;
+   }
+.button2{
+    margin-left: 5px;
+}
+#intro{
+    width: 10%;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+#intro1{
+    width: 10%;
+    margin-left: 173px;
+    margin-left: -73px;
+}
+.bottomline{
+    width: 150px;
+    height: 5px;
+    background-color: #445668;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    bottom: 90px;
+    left: 44%;
+    text-align: center;
+    border-radius: 10px;
+}
+.minline{
+    display: inline-block;
+    background-color:rgb(255, 81, 0); 
+    width: 40px;
+    height: 5px;
+    position: absolute;
+    border-radius: 10px;
+    left: 40px;
+}
