@@ -14,7 +14,7 @@ fetch(`http://localhost:8080/student/${emailTxt}/${passwordTxt}`)
     if(result==true){
         console.log(result);
         alert("Login Success!")
-        window.open("../view.html","_top");
+        window.open("../about.html","_top");
     }else{
         console.log(result);
         alert("Login Failed!");

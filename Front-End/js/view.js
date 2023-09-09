@@ -28,8 +28,6 @@ fetch("http://localhost:8080/student")
                     <td>${element.email}</td>
                     <td>${element.password}</td>
                     <td>${element.address}</td>
-                    
-                    
                     <td>${element.age}</td>
                     <td>${element.gender}</td>
                     <td>${element.mobile}</td>
@@ -54,7 +52,7 @@ function loadeTable() {
     redirect: "follow",
   };
 
-  fetch("http://localhost:8080/std", requestOptions)
+  fetch("http://localhost:8080/student", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       result.forEach((element) => {
@@ -93,10 +91,12 @@ function deleteById(id) {
     redirect: "follow",
   };
 
-  fetch(`http://localhost:8080/std/${id}`, requestOptions)
+  fetch(`http://localhost:8080/student/${id}`, requestOptions)
     .then((response) => response.text())
     .then((result) => location.reload())
     .catch((error) => console.log("error", error));
+     //alert("Deleted");
+console.log(result);
 }
 
 //-----------------------Search---------------------------------------------
@@ -114,25 +114,27 @@ function search() {
     redirect: "follow",
   };
 
-  let body = `  <tr>
-  <td>ID</td>
-  <th>Full Name</th>
-  <th>Email</th>
-  <th>Password</th>
-  <th>Address</th>
-  <th>Age</th>
-  <th>Gender</th>
-  <th>Mobile Number</th>
-  <th>Batch Name/No</th>
-  <th>NIC</th>
-  <th>Register Date</th>
-  </tr>`;
 
-  fetch(`http://localhost:8080/std/${searchValue}`, requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      result.forEach((element) => {
-        body += ` <tr>
+  fetch(`http://localhost:8080/student/${searchValue}`, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+
+    console.log(data);
+    let body = `  <tr>
+          <td>ID</td>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Address</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Mobile Number</th>
+          <th>Batch Name/No</th>
+          <th>NIC</th>
+          <th>Register Date</th>
+          </tr>`;
+    data.forEach(element => {
+      body += ` <tr>
         <td>${element.id}</td>
                     
         <td>${element.fullName}</td>
@@ -149,8 +151,31 @@ function search() {
         <td>${element.registerDate}</td>
         <td><button onclick="deleteById(${element.id})" >Delete</button></td>
                                 </tr>`;
-      });
-      tabale.innerHTML = body;
-    })
-    .catch((error) => console.log("error", error));
+
+    });
+
+         studentTable.innerHTML = body;
+
+
+  })
+  .catch(error => console.log('error', error));
+
 }
+
+//   
+//     .then((response) => response.json())
+//     .then(result  =>{
+//       result.forEach((element) => {
+
+//       console.log(result);
+// 
+  
+//       result.forEach(element => {
+
+//        
+//       });
+
+//     }))
+//     .catch((error) => console.log("error", error));
+
+// }

@@ -4,7 +4,9 @@ body {
     color:#A7A1AE;
     background-color:#1F2739;
   }
-  
+  .searchBtnAndTxt{
+    margin-left: 1%;
+  }
 .topic{
     color: #FB667A;
     padding-top: 30px;

@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student View</title>
     <link rel="stylesheet" href="./css/view.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
-    <div class="topic">Student Registered</div>
+    <div class="topic">Student Registered Sheet</div>
     <div>
-        <input type="text" placeholder="Search" id="searchBarTxt" />
-        <button onclick="search()">Search</button>
+        <input type="text" placeholder="Search" id="searchBarTxt" class="searchBtnAndTxt" />
+        <button onclick="search()" class="searchBtnAndTxt">Search</button>
+        <a href="index.html" ><button><i class='bx bx-arrow-back'></i></button></a>
       </div>
     <table border="1" id="tbl" class="container">
        

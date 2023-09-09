@@ -8,6 +8,7 @@
     <title>Registration Form</title>
     <link rel="stylesheet" href="css/register.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -20,9 +21,11 @@
 		</div>
 		<div class="login-content">
            
-                <img src="img/avatar.svg" class="avatarImg">
-				<h2 class="title">Welcome</h2>
-                <div>
+                
+                <div class="register_form">
+                    <img src="img/avatar.svg" class="avatarImg">
+                    <h2 class="title">register form  <a href="index.html" class="btnBack"><button><i class='bx bx-arrow-back'></i></button></a></h2>
+                    
                         <input type="text" id="txtFullName" class="input" placeholder="Enter Your Name" required>
 
                         <input type="text" id="txtEmail" class="input" placeholder="Enter Your Email" required>
@@ -44,17 +47,17 @@
             
                         <input type="text"  placeholder="Register Date" class="input" id="txtRgDt">
                 
-                        <input type="file" class="input" id="img">
+                        <input type="file"  id="img">
+
+                        <div class="button">
+                            <button class="btnRg" id="btnRg1">Register</button>
+                            <button class="btnRg" id="btnClear">Clear</button>
+                        </div>
+                       
                         
                     </div>            
             
-                    <div class="button">
-                        <button class="btnRg" id="btnRg1">Register</button>
-                        <button class="btnRg" id="btnClear">Clear</button>
-                    </div>
-                    <div class="back-home">
-                        <p>Are you going back? <a href="index.html" class="register-link">back</a></p>
-                    </div>
+
         </div>
     </div>
 
