@@ -20,7 +20,7 @@ import java.util.Optional;
 @Service
 @Slf4j
 
-public class StudentServiceImpl implements StudentServiceAgreement{
+public class StudentServiceImpl implements StudentServiceAgreement {
     @Autowired
     public RepoStudent repoStudent;
 
@@ -28,11 +28,11 @@ public class StudentServiceImpl implements StudentServiceAgreement{
     public NativeStudentRepository nativeStudentRepository;
     @Autowired
     ModelMapper modelMapper;
-    final String folderPath="C:/Users/DELL/OneDrive/Desktop/Student_Register_Form/Front-End/studentPhoto/";
+    final String folderPath = "C:/Users/DELL/OneDrive/Desktop/Student_Register_Form/Front-End/studentPhoto/";
 
     @Override
     public Iterable<StudentEntity> getStudentByFullName(String fullName) {
-        return  repoStudent.findByFullName(fullName);
+        return repoStudent.findByFullName(fullName);
     }
 
     @Override
@@ -45,8 +45,8 @@ public class StudentServiceImpl implements StudentServiceAgreement{
         Student student = new Student();
         Optional<StudentEntity> byId = repoStudent.findById(id);
         Iterator<StudentEntity> iterator = byId.stream().iterator();
-        while (iterator.hasNext()){
-            StudentEntity entity= iterator.next();
+        while (iterator.hasNext()) {
+            StudentEntity entity = iterator.next();
             student.setId(entity.getId());
             student.setFullName(entity.getFullName());
             student.setEmail(entity.getEmail());
@@ -65,14 +65,14 @@ public class StudentServiceImpl implements StudentServiceAgreement{
 
     @Override
     public void saveStudentWithOutImg(Student student) {
-        StudentEntity studentEntity=modelMapper.map(student,StudentEntity.class);
+        StudentEntity studentEntity = modelMapper.map(student, StudentEntity.class);
         repoStudent.save(studentEntity);
     }
 
     @Override
     public boolean findStudentByEmailAndPassword(String email, String password) {
         StudentEntity studentByEmailAndPassword = repoStudent.findStudentByEmailAndPassword(email, password);
-        return studentByEmailAndPassword !=null ? true : false;
+        return studentByEmailAndPassword != null ? true : false;
     }
 
     public Integer retrieveStudentCount() {
@@ -86,8 +86,8 @@ public class StudentServiceImpl implements StudentServiceAgreement{
         Iterator<StudentEntity> iterator = studentList.iterator();
         List<StudentEntity> studentModels = new ArrayList<>();
 
-        while (iterator.hasNext()){
-            StudentEntity  entity = iterator.next();
+        while (iterator.hasNext()) {
+            StudentEntity entity = iterator.next();
 
             studentModels.add(StudentEntity.builder().id(entity.getId())
                     .fullName(entity.getFullName())
@@ -111,21 +111,10 @@ public class StudentServiceImpl implements StudentServiceAgreement{
 
     @Override
     public void saveStudent(Student student, MultipartFile file) throws IOException {
-        String filePath=folderPath+file.getOriginalFilename();
-//        StudentEntity studentEntity=new StudentEntity();
-//        studentEntity.setFullName(student.getFullName());
-//        studentEntity.setAddress(student.getAddress());
-//        studentEntity.setAge(student.getAge());
-//        studentEntity.setGender(student.getGender());
-//        studentEntity.setMobile(student.getMobile());
-//        studentEntity.setBatchName(student.getBatchName());
-//        studentEntity.setNic(student.getNic());
-//        studentEntity.setRegisterDate(student.getRegisterDate());
-//        studentEntity.setImgName(file.getOriginalFilename());
-//        studentEntity.setImgPath(filePath);
-StudentEntity studentEntity=modelMapper.map(student,StudentEntity.class);
-studentEntity.setImgName(file.getOriginalFilename());
-studentEntity.setImgPath(filePath);
+        String filePath = folderPath + file.getOriginalFilename();
+        StudentEntity studentEntity = modelMapper.map(student, StudentEntity.class);
+        studentEntity.setImgName(file.getOriginalFilename());
+        studentEntity.setImgPath(filePath);
         repoStudent.save(studentEntity);
         file.transferTo(new File(filePath));
     }

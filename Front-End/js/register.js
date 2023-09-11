@@ -37,9 +37,7 @@ btnRegister.addEventListener("click",()=>{
     console.log(formData);
     var requestOptions = {
         method: 'POST',
-        // headers: myHeaders,
         body: formData
-        //redirect: 'follow'
     };
 
     fetch("http://localhost:8080/student/with", requestOptions)

@@ -59,8 +59,7 @@ function deleteById(id) {
     .then((response) => response.text())
     .then((result) => location.reload())
     .catch((error) => console.log("error", error));
-  //alert("Deleted");
-  console.log(result);
+ 
 }
 
 //-----------------------Search---------------------------------------------
@@ -95,7 +94,6 @@ function search() {
   fetch(`http://localhost:8080/student/${searchValue}`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       result.forEach((element) => {
         body += ` <tr>
       <td>${element.id}</td>

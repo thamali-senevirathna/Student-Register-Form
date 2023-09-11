@@ -22,6 +22,7 @@ public interface StudentServiceAgreement {
 
     void saveStudentWithOutImg(Student student);
 
-   boolean findStudentByEmailAndPassword(String email,String password);
+    boolean findStudentByEmailAndPassword(String email, String password);
+
     Integer retrieveStudentCount();
 }

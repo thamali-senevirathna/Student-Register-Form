@@ -203,7 +203,6 @@ form{
 }
 
 .register_form{
-    /* background-color: rgb(95, 158, 160); */
     border-color: black;
     font-family: 'Lisu Bosa', serif;
     justify-content: center;
@@ -230,13 +229,9 @@ form{
         padding-left: 2px;
         margin-top: 10%;
         color: #fff;
-        /* margin-bottom: 8%; */
         border-bottom: 1px solid red;
     }
-    .avatarImg{
-        /* margin-bottom: 5%; */
-        /* margin-left: %; */
-    }    
+       
 /* ======================================================= */
 
 

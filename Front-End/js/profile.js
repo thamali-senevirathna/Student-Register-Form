@@ -51,7 +51,6 @@ function loadProfile(id) {
   fetch(`http://localhost:8080/student/findById/${id}`, requestOptions)
     .then((response) => response.text())
     .then((result) => {
-      console.log(result);
       let stdObj = JSON.parse(result);
       let tblBody = ` `;
 
@@ -85,27 +84,6 @@ function loadProfile(id) {
 
       studentProfiles.innerHTML = tblBody;
 
-      //   <div class="profiles">
-      //   <section class="main-main">
-      //   <div class="profile-student">
-      //     <div class="image">
-      //     <img src="/studentPhoto/${stdObj.imgName}" class="profile-pic" alt="">
-      //     </div>
-      //     <div class="data">
-      //       <h2>${stdObj.fullName}</h2>
-      //       <h4>${stdObj.email}</h4>
-      //       <h4></h4>
-      //       <h4></h4>
-      //       <h4></h4>
-      //       <h4></h4>
-      //       <h4></h4>
-      //       <h4></h4>
-      //       <h4></h4>
-      //     </div>
-
-      //   </div>
-      // </section>
-      // </div>
     })
     .catch((error) => console.log("error", error));
 }

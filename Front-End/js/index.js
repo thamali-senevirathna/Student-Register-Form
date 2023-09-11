@@ -12,11 +12,9 @@ fetch(`http://localhost:8080/student/${emailTxt}/${passwordTxt}`)
 .then(response=>response.json())
 .then(result=>{
     if(result==true){
-        console.log(result);
         alert("Login Success!")
         window.open("../view.html","_top");
     }else{
-        console.log(result);
         alert("Login Failed!");
     }
 })
