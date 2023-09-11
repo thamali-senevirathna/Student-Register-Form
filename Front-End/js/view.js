@@ -1,15 +1,17 @@
 let studentTable = document.getElementById("tbl");
 
-fetch("http://localhost:8080/student")
-  .then((response) => response.json())
-  .then((res) => {
-    let tblBody = `
+//---------------------Loade-------------------------------------------------
+function loadeTable() {
+  fetch("http://localhost:8080/student")
+    .then((response) => response.json())
+    .then((res) => {
+      let tblBody = `
                     <tr>
                     <th>Student No</th>
                     <th>IMG</th>
                     <th>Full Name</th>
                     <th>Email</th>
-                    <th>Password</th>
+                    
                     <th>Address</th>
                     <th>Age</th>
                     <th>Gender</th>
@@ -18,15 +20,15 @@ fetch("http://localhost:8080/student")
                     <th>NIC</th>
                     <th>Register Date</th>
                     </tr>`;
-    res.forEach((element) => {
-      console.log(element);
-      tblBody += `<tr>
+      res.forEach((element) => {
+        console.log(element);
+        tblBody += `<tr>
                     <td>${element.id}</td>
-                    <td><img src="/studentPhoto/${element.imgName}" class="i_m_g" alt=""></td>
+                    <td><img src="/studentPhoto/${element.imgName}" class="i_m_g"></td>
                     
                     <td>${element.fullName}</td>
                     <td>${element.email}</td>
-                    <td>${element.password}</td>
+                   
                     <td>${element.address}</td>
                     <td>${element.age}</td>
                     <td>${element.gender}</td>
@@ -36,47 +38,9 @@ fetch("http://localhost:8080/student")
                     <td>${element.registerDate}</td>
                     <td><button onclick="deleteById(${element.id})" >Delete</button></td>
                     </tr>`;
-    });
-    studentTable.innerHTML = tblBody;
-  });
-
-//---------------------Loade--------------------------------------------------
-let table = document.getElementById("tbl");
-function loadeTable() {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
-  };
-
-  fetch("http://localhost:8080/student", requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      result.forEach((element) => {
-        tableBody += ` <tr>
-        <td>${element.id}</td>
-                    
-        <td>${element.fullName}</td>
-        <td>${element.email}</td>
-        <td>${element.password}</td>
-        <td>${element.address}</td>
-        
-        
-        <td>${element.age}</td>
-        <td>${element.gender}</td>
-        <td>${element.mobile}</td>
-        <td>${element.batchName}</td>
-        <td>${element.nic}</td>
-        <td>${element.registerDate}</td>
- <td><button onclick="deleteById(${element.id})" >Delete</button></td>
-                            </tr>`;
       });
-      table.innerHTML = tableBody;
-    })
-    .catch((error) => console.log("error", error));
+      studentTable.innerHTML = tblBody;
+    });
 }
 
 loadeTable();
@@ -95,14 +59,14 @@ function deleteById(id) {
     .then((response) => response.text())
     .then((result) => location.reload())
     .catch((error) => console.log("error", error));
-     //alert("Deleted");
-console.log(result);
+  //alert("Deleted");
+  console.log(result);
 }
 
 //-----------------------Search---------------------------------------------
-
+let searchValue = document.getElementById("searchBarTxt").value;
 function search() {
-  let searchValue = document.getElementById("searchBarTxt").value;
+
   alert(searchValue);
 
   var myHeaders = new Headers();
@@ -113,69 +77,50 @@ function search() {
     headers: myHeaders,
     redirect: "follow",
   };
-
+  let body = `   <tr>
+  <th>Student No</th>
+  <th>IMG</th>
+  <th>Full Name</th>
+  <th>Email</th>
+  <th>Password</th>
+  <th>Address</th>
+  <th>Age</th>
+  <th>Gender</th>
+  <th>Mobile Number</th>
+  <th>Batch Name/No</th>
+  <th>NIC</th>
+  <th>Register Date</th>
+  </tr>`;
 
   fetch(`http://localhost:8080/student/${searchValue}`, requestOptions)
-  .then(response => response.json())
-  .then(data => {
-
-    console.log(data);
-    let body = `  <tr>
-          <td>ID</td>
-          <th>Full Name</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Address</th>
-          <th>Age</th>
-          <th>Gender</th>
-          <th>Mobile Number</th>
-          <th>Batch Name/No</th>
-          <th>NIC</th>
-          <th>Register Date</th>
-          </tr>`;
-    data.forEach(element => {
-      body += ` <tr>
-        <td>${element.id}</td>
-                    
-        <td>${element.fullName}</td>
-        <td>${element.email}</td>
-        <td>${element.password}</td>
-        <td>${element.address}</td>
-        
-        
-        <td>${element.age}</td>
-        <td>${element.gender}</td>
-        <td>${element.mobile}</td>
-        <td>${element.batchName}</td>
-        <td>${element.nic}</td>
-        <td>${element.registerDate}</td>
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      result.forEach((element) => {
+        body += ` <tr>
+      <td>${element.id}</td>
+      <td><img src="/studentPhoto/${element.imgName}" class="i_m_g"></td>
+      
+      <td>${element.fullName}</td>
+      <td>${element.email}</td>
+      <td>${element.password}</td>
+      <td>${element.address}</td>
+      <td>${element.age}</td>
+      <td>${element.gender}</td>
+      <td>${element.mobile}</td>
+      <td>${element.batchName}</td>
+      <td>${element.nic}</td>
+      <td>${element.registerDate}</td>
         <td><button onclick="deleteById(${element.id})" >Delete</button></td>
                                 </tr>`;
+      });
 
-    });
-
-         studentTable.innerHTML = body;
-
-
-  })
-  .catch(error => console.log('error', error));
-
+      studentTable.innerHTML = body;
+    })
+    .catch((error) => console.log("error", error));
 }
-
-//   
-//     .then((response) => response.json())
-//     .then(result  =>{
-//       result.forEach((element) => {
-
-//       console.log(result);
-// 
-  
-//       result.forEach(element => {
-
-//        
-//       });
-
-//     }))
-//     .catch((error) => console.log("error", error));
-
-// }
+//------------------------refresh------------------
+function refresh(){
+  loadeTable();
+  searchValue = document.getElementById("searchBarTxt").value='';
+}

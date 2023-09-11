@@ -2,6 +2,7 @@ package edu.icet.controller;
 
 import edu.icet.dao.StudentEntity;
 import edu.icet.dto.Student;
+import edu.icet.repo.NativeStudentRepository;
 import edu.icet.service.StudentServiceAgreement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,9 @@ import java.util.List;
 public class StudentController {
     @Autowired
     public StudentServiceAgreement serviceAgreement;
+
+    @Autowired
+    public NativeStudentRepository nativeStudentRepository;
 
     @GetMapping
     public List<StudentEntity> getStudent() {
@@ -50,6 +54,10 @@ public class StudentController {
     @GetMapping("/{email}/{password}")
     public boolean findStudentByEmailAndPassword(@PathVariable String email, @PathVariable String password){
         return serviceAgreement.findStudentByEmailAndPassword(email, password);
+    }
+    @GetMapping("/count")
+    public Integer retrieveStudentCount(){
+        return nativeStudentRepository.retrieveStudentCount();
     }
 
 }

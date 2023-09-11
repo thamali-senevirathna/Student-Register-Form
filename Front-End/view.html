@@ -9,12 +9,26 @@
 
 </head>
 <body>
-    <div class="topic">Student Registered Sheet</div>
+          
     <div>
         <input type="text" placeholder="Search" id="searchBarTxt" class="searchBtnAndTxt" />
-        <button onclick="search()" class="searchBtnAndTxt">Search</button>
-        <a href="index.html" ><button><i class='bx bx-arrow-back'></i></button></a>
+        <button onclick="search()" class="search"><i class='bx bx-search-alt'></i></button>
+        <button onclick="refresh()" class="search"><i class='bx bx-refresh'></i></button>
       </div>
+    <div class="container">
+        <div class="navbar-container">
+            <div class="navlinks" id="navinks-container">
+               <div class="navlinks">
+                <a href="index.html" class="active">Home</a>
+              
+                <a href="profiles.html">Profiles</a>
+            </div> 
+            </div>
+        </div>
+        
+    </div>
+    <h2 class="h2">Student List</h2>
+
     <table border="1" id="tbl" class="container">
        
 

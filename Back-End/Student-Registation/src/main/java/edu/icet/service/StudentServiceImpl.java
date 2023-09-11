@@ -2,6 +2,7 @@ package edu.icet.service;
 
 import edu.icet.dao.StudentEntity;
 import edu.icet.dto.Student;
+import edu.icet.repo.NativeStudentRepository;
 import edu.icet.repo.RepoStudent;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -22,6 +23,9 @@ import java.util.Optional;
 public class StudentServiceImpl implements StudentServiceAgreement{
     @Autowired
     public RepoStudent repoStudent;
+
+    @Autowired
+    public NativeStudentRepository nativeStudentRepository;
     @Autowired
     ModelMapper modelMapper;
     final String folderPath="C:/Users/DELL/OneDrive/Desktop/Student_Register_Form/Front-End/studentPhoto/";
@@ -45,6 +49,7 @@ public class StudentServiceImpl implements StudentServiceAgreement{
             StudentEntity entity= iterator.next();
             student.setId(entity.getId());
             student.setFullName(entity.getFullName());
+            student.setEmail(entity.getEmail());
             student.setAddress(entity.getAddress());
             student.setAge(entity.getAge());
             student.setGender(entity.getGender());
@@ -52,6 +57,8 @@ public class StudentServiceImpl implements StudentServiceAgreement{
             student.setBatchName(entity.getBatchName());
             student.setNic(entity.getNic());
             student.setRegisterDate(entity.getRegisterDate());
+            student.setImgName(entity.getImgName());
+            student.setImgPath(entity.getImgPath());
         }
         return student;
     }
@@ -66,6 +73,10 @@ public class StudentServiceImpl implements StudentServiceAgreement{
     public boolean findStudentByEmailAndPassword(String email, String password) {
         StudentEntity studentByEmailAndPassword = repoStudent.findStudentByEmailAndPassword(email, password);
         return studentByEmailAndPassword !=null ? true : false;
+    }
+
+    public Integer retrieveStudentCount() {
+        return nativeStudentRepository.retrieveStudentCount();
     }
 
 
@@ -118,4 +129,5 @@ studentEntity.setImgPath(filePath);
         repoStudent.save(studentEntity);
         file.transferTo(new File(filePath));
     }
+
 }
